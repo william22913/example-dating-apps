@@ -1,0 +1,8 @@
+{
+    "E-1-CMD-AUT-001":"Unauthorized",
+    "E-1-CMD-AUT-002":"Token Expired",
+    "E-1-CMD-CTR-001":"Error Read Body",
+    "E-1-CMD-CTR-002":"Error Marshaling Body",
+    "E-1-CMD-CTR-003":"Error Found when Validate Field {{.FieldName}} on tag {{.Tag}}",
+    "E-1-CMD-SRV-001":"Data Used with this {{.FieldName}}"
+}

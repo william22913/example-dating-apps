@@ -1,0 +1,60 @@
+version: '3.0'
+services:
+  redis:
+    image: redis:latest
+    ports:
+      - "6379:6379"
+    volumes:
+      - cache:/data
+    restart: always
+
+  postgres:
+    image: postgres:latest
+    container_name: postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: test
+      POSTGRES_DB: dating_apps
+    volumes:
+      - db:/var/lib/postgresql/data
+      - ./sql_init/init_schema.sql:/docker-entrypoint-initdb.d/init_schema.sql 
+    ports:
+      - "5432:5432"
+    restart: unless-stopped
+
+  dating-apps:
+    depends_on:
+      - postgres
+      - redis
+    image: dating-apps
+    ports:
+      - "8843:8843"
+    environment:
+      DATING_APPS_POSTGRESQL_HOST: postgres
+      DATING_APPS_POSTGRESQL_PORT: 5432
+      DATING_APPS_POSTGRESQL_USERNAME: postgres
+      DATING_APPS_POSTGRESQL_PASSWORD: test
+      DATING_APPS_POSTGRESQL_DBNAME: dating_apps
+      DATING_APPS_POSTGRESQL_SSLMODE: false
+      DATING_APPS_POSTGRESQL_DEFAULTSCHEMA: dating_apps
+      DATING_APPS_POSTGRESQL_MAXOPENCONNECTION: 500
+      DATING_APPS_POSTGRESQL_MAXIDLECONNECTION: 500
+      DATING_APPS_SERVER_VERSION: 1.0.0
+      DATING_APPS_SERVER_HOST: 0.0.0.0
+      DATING_APPS_SERVER_PORT: 8843
+      DATING_APPS_TOKEN_USER_KEY: user_key
+      DATING_APPS_TOKEN_DURATION: 24h
+      DATING_APPS_REDIS_HOST: redis
+      DATING_APPS_REDIS_PORT: 6379
+      DATING_APPS_REDIS_DB: 0
+      DATING_APPS_REDIS_PASSWORD: 
+      DATING_APPS_REDIS_USERNAME: 
+      DATING_APPS_REDIS_MAX_RETRIES: 0
+      DATING_APPS_LOG_LEVEL: 0
+    command:
+      /home/dating-apps
+
+volumes:
+  cache:
+    driver: local
+  db:

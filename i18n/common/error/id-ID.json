@@ -1,0 +1,8 @@
+{
+    "E-1-CMD-AUT-001":"User Tidak dikenali",
+    "E-1-CMD-AUT-002":"Masa aktif token habis",
+    "E-1-CMD-CTR-001":"Error saat membaca request",
+    "E-1-CMD-CTR-002":"Error saat memproses pesan",
+    "E-1-CMD-CTR-003":"Error Melakukan Validasi terhadap {{.FieldName}} dalam tag {{.Tag}}",
+    "E-1-CMD-SRV-001":"Data {{.FieldName}} sudah digunakan"
+}
