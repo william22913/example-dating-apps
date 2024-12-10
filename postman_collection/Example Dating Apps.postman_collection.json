@@ -1,0 +1,284 @@
+{
+	"info": {
+		"_postman_id": "e141117d-ecfd-4f9d-beed-e9134a38629e",
+		"name": "Example Dating Apps",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24875483",
+		"_collection_link": "https://interstellar-robot-559410.postman.co/workspace/nexsoft~2aa27fd7-7efb-4c51-a223-1b9c509d59e1/collection/24875483-e141117d-ecfd-4f9d-beed-e9134a38629e?action=share&source=collection_link&creator=24875483"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"phone_number\": \"+62-8121341212\",\r\n    \"password\": \"hellothere\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8843/v1/appdate/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8843",
+					"path": [
+						"v1",
+						"appdate",
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Login Failed",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"phone_number\": \"+62-8121341212\",\r\n    \"password\": \"hellother1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8843/v1/appdate/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8843",
+							"path": [
+								"v1",
+								"appdate",
+								"login"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-Request-Id",
+							"value": "932cad2100ad4701a4947d462b72fd01"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 09 Dec 2024 03:38:16 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "217"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": false,\n    \"header\": {\n        \"request_id\": \"932cad2100ad4701a4947d462b72fd01\",\n        \"version\": \"1.0.0\",\n        \"timestamp\": \"2024-12-09T10:38:16+07:00\"\n    },\n    \"payload\": {\n        \"status\": 401,\n        \"code\": \"E-1-CMD-AUT-001\",\n        \"message\": \"Unauthenticated User\"\n    }\n}"
+				},
+				{
+					"name": "Login Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"phone_number\": \"+62-8121341212\",\r\n    \"password\": \"hellothere\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8843/v1/appdate/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8843",
+							"path": [
+								"v1",
+								"appdate",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": ", authorization"
+						},
+						{
+							"key": "Access-Control-Expose-Headers",
+							"value": ", authorization"
+						},
+						{
+							"key": "Authorization",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJhdWQiOiJ1c2VyIiwiZXhwIjoxNzMzODAxOTUyLCJqdGkiOiIxNjIzOTA3Yi1mMjNkLTQ3MTQtOGQzNy00MDkxZDcyNGIyNWIiLCJpYXQiOjE3MzM3MTU1NTIsImlzcyI6ImRhdGluZy1hcHBzIiwic3ViIjoidXNlcl90b2tlbiJ9.Pe3c2PSuSmGrqofrI-NMBpNu38rv0KBcrF3lhPtg1pM"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-Request-Id",
+							"value": "ef4a5428e203463f90ca2da591f96c29"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 09 Dec 2024 03:39:12 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "387"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"header\": {\n        \"request_id\": \"\",\n        \"version\": \"1.0.0\",\n        \"timestamp\": \"2024-12-09T10:39:12+07:00\"\n    },\n    \"payload\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJhdWQiOiJ1c2VyIiwiZXhwIjoxNzMzODAxOTUyLCJqdGkiOiIxNjIzOTA3Yi1mMjNkLTQ3MTQtOGQzNy00MDkxZDcyNGIyNWIiLCJpYXQiOjE3MzM3MTU1NTIsImlzcyI6ImRhdGluZy1hcHBzIiwic3ViIjoidXNlcl90b2tlbiJ9.Pe3c2PSuSmGrqofrI-NMBpNu38rv0KBcrF3lhPtg1pM\"\n}"
+				}
+			]
+		},
+		{
+			"name": "SignUp",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8843/v1/appdate/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8843",
+					"path": [
+						"v1",
+						"appdate",
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "SignUp Failed",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"phone_number\":\"+62-8121341215\",\r\n    \"password\": \"hellothere\",\r\n    \"first_name\": \"William\",\r\n    \"middle_name\" : \"\",\r\n    \"last_name\" : \"Str\",\r\n    \"birth_date\": \"1996-08-10\",\r\n    \"gender\": \"Male\",\r\n    \"preferences\": {\r\n        \"gender\": \"Female\",\r\n        \"min_age\" : 18,\r\n        \"max_age\": 25\r\n    },\r\n    \"passions\": [\"game\", \"adventure\", \"sport\"]\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8843/v1/appdate/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8843",
+							"path": [
+								"v1",
+								"appdate",
+								"register"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-Request-Id",
+							"value": "7836f12107d44c5c9ebf19f88f808344"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 10 Dec 2024 14:44:10 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "222"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": false,\n    \"header\": {\n        \"request_id\": \"7836f12107d44c5c9ebf19f88f808344\",\n        \"version\": \"1.0.0\",\n        \"timestamp\": \"2024-12-10T21:44:10+07:00\"\n    },\n    \"payload\": {\n        \"status\": 400,\n        \"code\": \"E-1-CMD-SRV-001\",\n        \"message\": \"Data Used with this Phone\"\n    }\n}"
+				},
+				{
+					"name": "SignUp Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"phone_number\":\"+62-8121341216\",\r\n    \"password\": \"hellothere\",\r\n    \"first_name\": \"William\",\r\n    \"middle_name\" : \"\",\r\n    \"last_name\" : \"Str\",\r\n    \"birth_date\": \"1996-08-10\",\r\n    \"gender\": \"Male\",\r\n    \"preferences\": {\r\n        \"gender\": \"Female\",\r\n        \"min_age\" : 18,\r\n        \"max_age\": 25\r\n    },\r\n    \"passions\": [\"game\", \"adventure\", \"sport\"]\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8843/v1/appdate/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8843",
+							"path": [
+								"v1",
+								"appdate",
+								"register"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-Request-Id",
+							"value": "92e8b473934b4202804343eca3145ed8"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 10 Dec 2024 14:44:43 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "148"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"header\": {\n        \"request_id\": \"92e8b473934b4202804343eca3145ed8\",\n        \"version\": \"1.0.0\",\n        \"timestamp\": \"2024-12-10T21:44:43+07:00\"\n    },\n    \"payload\": null\n}"
+				}
+			]
+		}
+	]
+}
